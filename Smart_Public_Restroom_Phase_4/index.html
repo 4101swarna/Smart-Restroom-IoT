@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Public Restroom</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .main {
+            padding: 0 20px; /* Add 20px of padding on both sides */
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Public Restroom</h1>
+
+    <div class="restroom" id="restroom-1">
+        <h2>Restroom 1</h2>
+        <p>Status: <span id="status-1" class="vacant">Vacant</span></p>
+        <button onclick="toggleStatus(1)">Toggle Status</button>
+    </div>
+
+    <div class="restroom" id="restroom-2">
+        <h2>Restroom 2</h2>
+        <p>Status: <span id="status-2" class="vacant">Vacant</span></p>
+        <button onclick="toggleStatus(2)">Toggle Status</button>
+    </div>
+    
+    <div class="restroom" id="restroom-3">
+        <h2>Restroom 3</h2>
+        <p>Status: <span id="status-3" class="vacant">Vacant</span></p>
+        <button onclick="toggleStatus(3)">Toggle Status</button>
+    </div>
+
+    <div class="main">
+        <p style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #333;">A smart public restroom is a technologically advanced and automated facility designed to enhance the user experience, improve hygiene, and efficiently manage resources in public restroom settings. These restrooms incorporate various sensors, devices, and connectivity features to offer a range of benefits, including</p>
+        <image src="2305.i602.004.S.m009.c12.wc public toilet flat collage.jpg" width="600" height="400" style="border-radius: 10px;"></image>    
+    </div>
+
+    <script>
+        const restroomStatus = {
+            1: 'vacant',
+            2: 'vacant',
+            3: 'vacant'
+        };
+
+        function toggleStatus(restroomId) {
+            const statusElement = document.getElementById(`status-${restroomId}`);
+            const restroomElement = document.getElementById(`restroom-${restroomId}`);
+
+            if (restroomStatus[restroomId] === 'vacant') {
+                restroomStatus[restroomId] = 'occupied';
+                statusElement.textContent = 'Occupied';
+                statusElement.className = 'occupied';
+            } else {
+                restroomStatus[restroomId] = 'vacant';
+                statusElement.textContent = 'Vacant';
+                statusElement.className = 'vacant';
+            }
+        }
+    </script>
+</body>
+</html>
